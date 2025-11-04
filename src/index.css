@@ -1,0 +1,521 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Design System - Inspired by modern, clean aesthetics
+All colors MUST be HSL for proper theme switching
+*/
+
+@layer base {
+  :root {
+    /* Light mode - Clean and minimal */
+    --background: 0 0% 98%;
+    --foreground: 240 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 30%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --primary-glow: 230 100% 70%;
+    --surface: 0 0% 100%;
+    --surface-secondary: 240 5% 98%;
+    --text-primary: 240 10% 15%;
+    --text-secondary: 240 4% 46%;
+    --text-tertiary: 240 4% 65%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(240 8% 12%) 0%, hsl(217 91% 40%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(240 5% 96%) 0%, hsl(217 50% 94%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(240 8% 12%) 50%, hsl(217 91% 20%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(240 10% 15% / 0.1);
+    --shadow-medium: 0 8px 30px -8px hsl(240 10% 15% / 0.15);
+    --shadow-strong: 0 20px 60px -12px hsl(240 10% 15% / 0.25);
+    --shadow-primary: 0 8px 30px -8px hsl(217 91% 60% / 0.3);
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Sophisticated and elegant */
+    --background: 240 8% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 8% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 8% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 240 8% 8%;
+
+    --secondary: 240 8% 15%;
+    --secondary-foreground: 0 0% 85%;
+
+    --muted: 240 8% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 240 8% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 8% 20%;
+    --input: 240 8% 20%;
+    --ring: 217 91% 60%;
+
+    /* Dark mode custom tokens */
+    --primary-glow: 230 100% 70%;
+    --surface: 240 8% 10%;
+    --surface-secondary: 240 8% 12%;
+    --text-primary: 0 0% 95%;
+    --text-secondary: 240 5% 65%;
+    --text-tertiary: 240 5% 50%;
+
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(217 91% 20%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(240 8% 10%) 0%, hsl(240 8% 15%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240 8% 6%) 0%, hsl(240 8% 10%) 50%, hsl(217 91% 15%) 100%);
+
+    /* Dark shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
+    --shadow-strong: 0 20px 60px -12px hsl(0 0% 0% / 0.6);
+    --shadow-primary: 0 8px 30px -8px hsl(217 91% 60% / 0.4);
+    
+    /* Dark mode glassmorphism */
+    --glass-bg: rgba(0, 0, 0, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Default scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-glow));
+  }
+
+  /* Theme-specific scrollbar thumb colors */
+  .theme-red ::-webkit-scrollbar-thumb {
+    background: hsl(348 83% 47%);
+  }
+  .theme-red ::-webkit-scrollbar-thumb:hover {
+    background: hsl(348 83% 57%);
+  }
+
+  .theme-blue ::-webkit-scrollbar-thumb {
+    background: hsl(217 91% 60%);
+  }
+  .theme-blue ::-webkit-scrollbar-thumb:hover {
+    background: hsl(230 100% 70%);
+  }
+
+  .theme-green ::-webkit-scrollbar-thumb {
+    background: hsl(142 71% 45%);
+  }
+  .theme-green ::-webkit-scrollbar-thumb:hover {
+    background: hsl(142 71% 55%);
+  }
+
+  .theme-yellow ::-webkit-scrollbar-thumb {
+    background: hsl(45 93% 47%);
+  }
+  .theme-yellow ::-webkit-scrollbar-thumb:hover {
+    background: hsl(45 93% 57%);
+  }
+
+  .theme-purple ::-webkit-scrollbar-thumb {
+    background: hsl(270 91% 65%);
+  }
+  .theme-purple ::-webkit-scrollbar-thumb:hover {
+    background: hsl(280 100% 75%);
+  }
+}
+
+@layer components {
+  /* Page themes */
+  .page-border {
+    border: 2px solid;
+    border-radius: 24px;
+    margin: 24px;
+    min-height: calc(100vh - 48px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .theme-blue {
+    --primary: 217 91% 60%;
+    --primary-glow: 230 100% 70%;
+    --accent: 217 91% 60%;
+    border-color: hsl(217 91% 60%);
+  }
+
+  .theme-purple {
+    --primary: 270 91% 65%;
+    --primary-glow: 280 100% 75%;
+    --accent: 270 91% 65%;
+    border-color: hsl(270 91% 65%);
+  }
+
+  .theme-green {
+    --primary: 142 71% 45%;
+    --primary-glow: 142 71% 55%;
+    --accent: 142 71% 45%;
+    border-color: hsl(142 71% 45%);
+  }
+
+  .theme-red {
+    --primary: 348 83% 47%;
+    --primary-glow: 348 83% 57%;
+    --accent: 348 83% 47%;
+    border-color: hsl(348 83% 47%);
+  }
+
+  .theme-yellow {
+    --primary: 45 93% 47%;
+    --primary-glow: 45 93% 57%;
+    --accent: 45 93% 47%;
+    border-color: hsl(45 93% 47%);
+  }
+
+  /* Theme-specific scrollable sections */
+  .scrollable-section {
+    background: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(240 8% 12%) 100%);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 16px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scrollable-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, hsl(var(--primary-glow) / 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Red theme scrollable section */
+  .theme-red .scrollable-section {
+    background: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(240 8% 12%) 100%);
+    border: 1px solid hsl(348 83% 47% / 0.2);
+  }
+
+  .theme-red .scrollable-section::before {
+    background: radial-gradient(circle at 30% 50%, hsl(348 83% 47% / 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, hsl(348 83% 57% / 0.1) 0%, transparent 50%);
+  }
+
+  /* Blue theme scrollable section */
+  .theme-blue .scrollable-section {
+    background: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(240 8% 12%) 100%);
+    border: 1px solid hsl(217 91% 60% / 0.2);
+  }
+
+  .theme-blue .scrollable-section::before {
+    background: radial-gradient(circle at 30% 50%, hsl(217 91% 60% / 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, hsl(230 100% 70% / 0.1) 0%, transparent 50%);
+  }
+
+  /* Green theme scrollable section */
+  .theme-green .scrollable-section {
+    background: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(240 8% 12%) 100%);
+    border: 1px solid hsl(142 71% 45% / 0.2);
+  }
+
+  .theme-green .scrollable-section::before {
+    background: radial-gradient(circle at 30% 50%, hsl(142 71% 45% / 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, hsl(142 71% 55% / 0.1) 0%, transparent 50%);
+  }
+
+  /* Yellow theme scrollable section */
+  .theme-yellow .scrollable-section {
+    background: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(240 8% 12%) 100%);
+    border: 1px solid hsl(45 93% 47% / 0.2);
+  }
+
+  .theme-yellow .scrollable-section::before {
+    background: radial-gradient(circle at 30% 50%, hsl(45 93% 47% / 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, hsl(45 93% 57% / 0.1) 0%, transparent 50%);
+  }
+
+  /* Purple theme scrollable section */
+  .theme-purple .scrollable-section {
+    background: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(240 8% 12%) 100%);
+    border: 1px solid hsl(270 91% 65% / 0.2);
+  }
+
+  .theme-purple .scrollable-section::before {
+    background: radial-gradient(circle at 30% 50%, hsl(270 91% 65% / 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, hsl(280 100% 75% / 0.1) 0%, transparent 50%);
+  }
+
+  /* Hero section with animated background */
+  .hero-background {
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, hsl(var(--primary-glow) / 0.08) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+  }
+
+  /* Floating animation for hero background */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(1deg); }
+    66% { transform: translateY(10px) rotate(-1deg); }
+  }
+
+  /* Enhanced Glassmorphism Utilities */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 20px;
+  }
+
+  .glass-sidebar {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(30px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-nav-item {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .glass-nav-item:hover {
+    background: rgba(217, 119, 242, 0.1);
+    border-color: rgba(217, 119, 242, 0.3);
+    transform: translateY(-2px);
+  }
+
+  /* Text gradients */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-24 lg:py-32;
+  }
+
+  .container-width {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+
+  /* Section gradient backgrounds */
+  .section-gradient-green {
+    background: linear-gradient(135deg, hsl(142 71% 45% / 0.05) 0%, hsl(142 71% 55% / 0.03) 100%);
+  }
+
+  .section-gradient-blue {
+    background: linear-gradient(135deg, hsl(217 91% 60% / 0.05) 0%, hsl(230 100% 70% / 0.03) 100%);
+  }
+
+  .section-gradient-red {
+    background: linear-gradient(135deg, hsl(348 83% 47% / 0.05) 0%, hsl(348 83% 57% / 0.03) 100%);
+  }
+
+  .section-gradient-yellow {
+    background: linear-gradient(135deg, hsl(45 93% 47% / 0.05) 0%, hsl(45 93% 57% / 0.03) 100%);
+  }
+
+  .section-gradient-purple {
+    background: linear-gradient(135deg, hsl(270 91% 65% / 0.05) 0%, hsl(280 100% 75% / 0.03) 100%);
+  }
+
+  /* Light gradient background for scrollable sections */
+  .section-gradient-light {
+    background: linear-gradient(135deg, hsl(240 8% 98% / 0.95) 0%, hsl(240 8% 96% / 0.9) 50%, hsl(217 91% 94% / 0.85) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-gradient-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, hsl(217 91% 60% / 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, hsl(230 100% 70% / 0.03) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+  }
+
+  /* Theme-specific scrollbar colors */
+  .theme-green ::-webkit-scrollbar-thumb {
+    background: hsl(142 71% 45%);
+  }
+
+  .theme-green ::-webkit-scrollbar-thumb:hover {
+    background: hsl(142 71% 55%);
+  }
+
+  .theme-blue ::-webkit-scrollbar-thumb {
+    background: hsl(217 91% 60%);
+  }
+
+  .theme-blue ::-webkit-scrollbar-thumb:hover {
+    background: hsl(230 100% 70%);
+  }
+
+  .theme-red ::-webkit-scrollbar-thumb {
+    background: hsl(348 83% 47%);
+  }
+
+  .theme-red ::-webkit-scrollbar-thumb:hover {
+    background: hsl(348 83% 57%);
+  }
+
+  .theme-yellow ::-webkit-scrollbar-thumb {
+    background: hsl(45 93% 47%);
+  }
+
+  .theme-yellow ::-webkit-scrollbar-thumb:hover {
+    background: hsl(45 93% 57%);
+  }
+
+  .theme-purple ::-webkit-scrollbar-thumb {
+    background: hsl(270 91% 65%);
+  }
+
+  .theme-purple ::-webkit-scrollbar-thumb:hover {
+    background: hsl(280 100% 75%);
+  }
+
+  /* Hidden scrollbar for horizontal scrolling */
+  .scrollbar-hidden {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* WebKit */
+  }
+}
