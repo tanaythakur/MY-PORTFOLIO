@@ -9,8 +9,8 @@ interface ThemeProviderProps {
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
-  enableSystem = true,
+  defaultTheme = "dark",
+  enableSystem = false,
   disableTransitionOnChange = true,
   ...props
 }: ThemeProviderProps) {
@@ -19,6 +19,7 @@ export function ThemeProvider({
       attribute="class"
       defaultTheme={defaultTheme}
       enableSystem={enableSystem}
+      forcedTheme="dark"
       disableTransitionOnChange={disableTransitionOnChange}
       {...props}
     >
